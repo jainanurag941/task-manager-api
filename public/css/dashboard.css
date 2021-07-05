@@ -1,0 +1,318 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-image: url(https://image.freepik.com/free-photo/scratched-concrete-flooring-textured-background_53876-101688.jpg);
+}
+.menu-bar {
+    background-image: linear-gradient(-90deg, #04204e, #d38312);
+}
+.nav-link {
+    font-size: 16px;
+    margin: 3px;
+    color: #fff!important;
+    font-weight: 500;
+}
+.navbar-nav {
+    text-align: right;
+    margin-right: 20px;
+}
+.menu-bar .navbar-toggler {
+    padding-right: 20px;
+    outline: none!important;
+    border: none!important;
+}
+.navbar .fa {
+    color: #fff!important;
+    font-size: 26px;
+}
+.nav-link:hover {
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+}
+.navbar-brand img {
+    width: 43px;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+@media only screen and (max-width: 1000px) {
+    .nav-link:hover {
+        border-bottom: none!important;
+        font-weight: bold;
+    }
+}
+
+.container{
+    border: 2px solid black;
+    margin: 50px auto 30px auto;
+    padding: 20px;
+    height: 850px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #E8ECEF 0%, #CDF0EA 35%, #FEFFDE 100%);
+    box-shadow: 5px 5px 10px #04204e; 
+}
+
+.task-button {
+    margin-left: 83%;
+    margin-top: 20px;
+    display: inline-flex;
+    height: 45px;
+    padding: 0;
+    background: linear-gradient(90deg,  rgba(9,9,121,0.4) 35%, rgba(143, 88, 194, 0.37)100%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.task-button:hover {
+    background-color: #008168;
+    transform: scale(1.1);
+
+}
+.task-button:active {
+    background-color: #627e78;
+}
+.button__text,
+.button__icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 15px;
+    color: white;
+    height: 100%;
+}
+.button__icon {
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+.prevnext{
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+#prev-btn{
+    margin-right: 10px;
+    display: inline-flex;
+    height: 45px;
+    padding: 0;
+    background: linear-gradient(90deg,  rgba(9,9,121,0.4) 35%, rgba(143, 88, 194, 0.37)100%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+#prev-btn:hover{
+    background-color: #008168;
+    transform: scale(1.1);
+}
+#next-btn{
+    margin-left: 10px;
+    display: inline-flex;
+    height: 45px;
+    padding: 0;
+    background: linear-gradient(90deg,  rgba(9,9,121,0.4) 35%, rgba(143, 88, 194, 0.37)100%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+#next-btn:hover{
+    background-color: #008168;
+    transform: scale(1.1);
+}
+
+.taskinfo{
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);
+    background: linear-gradient(to right, #ffd194, #70e1f5); 
+    border: 2px solid white;
+    box-shadow: 3px 3px 10px #04204e;
+    height: 190px;
+    margin: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    padding: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    margin: 30px;
+}
+
+h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+#newTask{
+    border: 2px solid white;
+    box-shadow: 3px 3px 10px #04204e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(/img/popbkgimg.jpg);
+    position: absolute;
+    z-index: +1;
+    border-radius: 30px;
+    color: white;
+    display: none;
+    margin-left: 900px;
+    margin-top: 80px;
+    height: 260px;
+}
+label{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 1.1rem;
+}
+
+.close{
+    background: none;
+    border: none;
+    color: #23049D;
+    margin-top: 10px;
+    margin-left: 340px;
+    font-size: 2rem;
+}
+.close:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.cancelButton{
+    padding-right: 20px;
+}
+.addInfo{
+    font-family: 'Merriweather', serif;
+    margin: 10px;
+    margin-top: -30px;
+    color: brown;
+}
+.addingtask{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1.5px solid white;
+    box-shadow: 3px 3px 10px #98DDCA;
+    width: 75%;
+    height: 70%;
+    border-radius: 22px;
+}
+#taskDesc{
+    height: 30px;
+    width: 85%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 6px -6px black;
+    padding: 5px;
+    margin-bottom: 26px;
+}
+#taskAdd{
+    margin: 20px;
+    margin-top: 26px;
+    margin-bottom: 50px;
+    width: 80px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid white;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg,  rgba(9,9,121,0.4) 35%, rgba(143, 88, 194, 0.37)100%);
+}
+#taskAdd:hover{
+    background-color: #008168;
+    transform: scale(1.1);
+    border: 1.5px solid white;
+}
+
+.btn{
+    margin-left: 750px;
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover{
+    color: rgb(206, 31, 31);
+}
+
+.changeStatus{
+    display: flex;
+    align-items: center;
+}
+.taskPend{
+    background: linear-gradient(90deg,  rgba(9,9,121,0.4) 35%, rgba(143, 88, 194, 0.37)100%);
+    margin-left: 200px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    color: white;
+    outline: none;
+    border: none;
+    transition: all 0.2s;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 16px;
+    height: 30px;
+}
+.taskPend:hover{
+    transform: scale(1.1);
+    background-color: red;
+}
+.taskComp{
+    background: linear-gradient(90deg,  rgba(9,9,121,0.4) 35%, rgba(143, 88, 194, 0.37)100%);
+    margin-left: 30px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 0 10px;
+    outline: none;
+    border: none;
+    color: white;
+    transition: all 0.2s;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 16px;
+    height: 30px;
+}
+.taskComp:hover{
+    transform: scale(1.1);
+    background-color: green;
+}
+
+footer {
+    background-image: linear-gradient(-90deg, #04204e, #d38312);
+    text-align: center;
+    margin-top: 16px;
+    padding: 16px 0;
+}
+
+footer a {
+    color: #888888;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #04204e;
+    text-decoration: none;
+}
+
+.email {
+    color:black;
+}
