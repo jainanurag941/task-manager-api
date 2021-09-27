@@ -93,7 +93,7 @@ signOut.addEventListener('click', (e) => {
         method: 'POST'
     }).then((response) => {
         console.log('Successfully Logged Out');
-        location.href = "/"
+        location.replace("/")
     })
 })
 

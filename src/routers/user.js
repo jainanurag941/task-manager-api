@@ -4,6 +4,7 @@ const sharp = require('sharp');
 const router = new express.Router();
 const auth = require('../middleware/auth');
 const User = require('../models/user');
+const jwt = require('jsonwebtoken');
 
 router.use(express.json())
 router.use(express.urlencoded({extended: true}))
@@ -33,8 +34,20 @@ router.get('/register', (req, res)=>{
     res.render('register')
 })
 
-router.get('/dashboard', auth, async (req, res)=>{
-    res.render('dashboard')
+router.get('/dashboard', async (req, res)=>{
+    const token = req.header('Cookie')
+    if(token) {
+        const modToken = token.replace("token=","")
+        const decoded = jwt.verify(modToken, process.env.JWT_SECRET)
+        const user = await User.findOne({_id: decoded._id, 'tokens.token': modToken})
+        if(user) {
+            res.render('dashboard')
+        } else {
+            res.redirect("/")
+        }
+    } else {
+        res.redirect("/")
+    }
 })
 
 router.post('/users/login', async (req, res) => {
