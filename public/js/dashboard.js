@@ -22,7 +22,7 @@ newTaskAdd.addEventListener('submit', (e) => {
         location.href = "/dashboard"
         return response.json()
     }).then((data) => {
-        console.log(data)
+        console.log('Task Successfully Added')
     })
 })
 
@@ -92,7 +92,7 @@ signOut.addEventListener('click', (e) => {
     fetch('/users/logout', {
         method: 'POST'
     }).then((response) => {
-        console.log(response);
+        console.log('Successfully Logged Out');
         location.href = "/"
     })
 })
@@ -111,7 +111,7 @@ function deleteTask(id) {
     }).then((response) => {
         return response.json()
     }).then((data) => {
-        console.log(data);
+        console.log('Task Successfully deleted');
         fetchTasks(i)
     })
 }
@@ -131,7 +131,7 @@ function updateTaskStatus(id) {
     }).then((response) => {
         return response.json()
     }).then((data) => {
-        console.log(data);
+        console.log('Task Successfully Updated');
         fetchTasks(i)
     })
 }
