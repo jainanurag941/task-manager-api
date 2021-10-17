@@ -146,7 +146,7 @@ body {
   background: linear-gradient(to right, #ffd194, #70e1f5);
   border: 2px solid white;
   box-shadow: 3px 3px 10px #04204e;
-  height: 165px;
+  height: 180px;
   margin: 25px;
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
@@ -181,7 +181,7 @@ h3 {
   color: white;
   display: none;
   margin-left: 37vw;
-  margin-top: 15vh;
+  margin-top: 18vh;
   height: 260px;
 }
 label {
@@ -350,5 +350,8 @@ footer a:hover {
   .container {
     border: 1px solid black;
     box-shadow: 5px 5px 80px #04204e;
+  }
+  #newTask {
+    margin-left: 2.5vw;
   }
 }

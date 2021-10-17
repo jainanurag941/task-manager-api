@@ -84,7 +84,7 @@ function fetchTasks(i) {
                             <td><button class="taskComp" id="${'1' + id}" onclick=updateTaskStatus(id)><span class="hide-sm">Mark Finished</span><span class="show-sm">Done</span></button></td>
                         </tr>
                     </table>
-                    Created At : ${task.createdAt.substr(0, 10)}
+                    <br>Created At : ${task.createdAt.substr(0, 10)}
                     <b>Updated At : ${task.updatedAt.substr(0, 10)}</b>
                 </div>`
             }).join('')
