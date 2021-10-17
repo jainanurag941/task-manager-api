@@ -146,7 +146,7 @@ body {
   background: linear-gradient(to right, #ffd194, #70e1f5);
   border: 2px solid white;
   box-shadow: 3px 3px 10px #04204e;
-  height: 175px;
+  height: 165px;
   margin: 25px;
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
@@ -257,10 +257,11 @@ label {
 }
 
 .btn {
-  margin-left: 750px;
-  position: absolute;
   border: none;
   cursor: pointer;
+}
+.show-sm {
+  display: none;
 }
 .btn:hover {
   color: rgb(206, 31, 31);
@@ -338,5 +339,16 @@ footer a:hover {
 @media (max-width: 850px) {
   .hide-sm {
     display: none;
+  }
+  .taskPend {
+    margin-left: 2.5px;
+    margin-right: 3px;
+  }
+  .show-sm {
+    display: initial;
+  }
+  .container {
+    border: 1px solid black;
+    box-shadow: 5px 5px 80px #04204e;
   }
 }

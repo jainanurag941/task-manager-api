@@ -71,17 +71,20 @@ function fetchTasks(i) {
             taskInformation = data.map((task) => {
                 var id = task._id
                 return `<div class="taskinfo">
-                    ${num++}: Description : ${task.description}<br>
-                    <button class="btn" id="${id}" onclick=deleteTask(id)><i class="fas fa-trash-alt" style="font-size:26px"></i></button>
-                    
+                    <table>
+                        <tr>
+                            <td>${num++}: <span class="hide-sm">Description : </span>${task.description}</td>
+                            <td><button class="btn" id="${id}" onclick=deleteTask(id)><i class="fas fa-trash-alt" style="font-size:18px"></i></button></td>
+                        </tr>
+                    </table>
                     <table>
                         <tr>
                             <td><b><span class="hide-sm">Status : </span>${(task.completed) === true ? taskComp : taskPend}</b></td>
                             <td><button class="taskPend" id="${'0' + id}" onclick=updateTaskStatus(id)><span class="hide-sm">Mark </span>Pending</button></td>
-                            <td><button class="taskComp" id="${'1' + id}" onclick=updateTaskStatus(id)><span class="hide-sm">Mark </span>Finished</button></td>
+                            <td><button class="taskComp" id="${'1' + id}" onclick=updateTaskStatus(id)><span class="hide-sm">Mark Finished</span><span class="show-sm">Done</span></button></td>
                         </tr>
                     </table>
-                    <br>Created At : ${task.createdAt.substr(0, 10)}
+                    Created At : ${task.createdAt.substr(0, 10)}
                     <b>Updated At : ${task.updatedAt.substr(0, 10)}</b>
                 </div>`
             }).join('')
