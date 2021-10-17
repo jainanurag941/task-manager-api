@@ -73,12 +73,16 @@ function fetchTasks(i) {
                 return `<div class="taskinfo">
                     ${num++}: Description : ${task.description}<br>
                     <button class="btn" id="${id}" onclick=deleteTask(id)><i class="fas fa-trash-alt" style="font-size:26px"></i></button>
-                    <div class="changeStatus"><p><b>Status : ${(task.completed) === true ? taskComp : taskPend}</b></p>
-                        <button class="taskPend" id="${'0' + id}" onclick=updateTaskStatus(id)>Mark Pending</button>
-                        <button class="taskComp" id="${'1' + id}" onclick=updateTaskStatus(id)>Mark Finished</button>
-                    </div>
-                    <div>Created At : ${task.createdAt.substr(0, 10)}</div>
-                    <b>Last Updated : ${task.updatedAt.substr(0, 10)}</b>
+                    
+                    <table>
+                        <tr>
+                            <td><b><span class="hide-sm">Status : </span>${(task.completed) === true ? taskComp : taskPend}</b></td>
+                            <td><button class="taskPend" id="${'0' + id}" onclick=updateTaskStatus(id)><span class="hide-sm">Mark </span>Pending</button></td>
+                            <td><button class="taskComp" id="${'1' + id}" onclick=updateTaskStatus(id)><span class="hide-sm">Mark </span>Finished</button></td>
+                        </tr>
+                    </table>
+                    <br>Created At : ${task.createdAt.substr(0, 10)}
+                    <b>Updated At : ${task.updatedAt.substr(0, 10)}</b>
                 </div>`
             }).join('')
         }
