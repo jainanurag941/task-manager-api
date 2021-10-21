@@ -13,7 +13,7 @@
     {{!-- CSS Stylesheets --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/profile.css">
 
     {{!-- Bootstrap Scripts --}}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -52,11 +52,11 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                                My Profile
+                                Logout
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/profile">View Profile</a></li>
                                 <li><a class="dropdown-item" href="#" id="logOut">Logout</a></li>
+                                <li><a class="dropdown-item" href="#" id="logOutAll">Logout from all devices</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -68,58 +68,56 @@
         </div>
     </div>
 
-    <div id="newTask">
-        <button type="button" class="close" aria-label="Close">
-            <span aria-hidden="true" class="cancelButton">&times;</span>
-        </button>
-        <h2 class="addInfo">Add Task</h2>
-        <form class="addingtask">  
-            <input type="text" id="taskDesc">
-            <label for="accept">Completed
-            <input type="checkbox" id="accept">
-            <br>
-            <button id="taskAdd" type="submit">Add</button>
-        </form>
-    </div>
+    <section class="container">
+        <h1 class="large">
+            <i class="fas fa-user"></i> User Information
+        </h1>
+        <form class="form userInfoForm">
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> Username</label><br>
+                <input type="text" placeholder="Username" id="username" value="" name="username" />
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-envelope"></i> Email</label><br>
+                <input type="email" placeholder="Email" id="email" value="" name="email" />
+            </div>
+            <div class="form-group">
+                <label>Age</label><br>
+                <input type="number" placeholder="Age" id="age" value="" name="age" />
+            </div>
+            <button type="submit" class="btn btn-dark my-1">Update</button>
+            <a class="btn btn-light my-2" href="/dashboard">Go Back</a>
+      </form>
+    </section>
 
-    <h1 id="vibemsg"></h1>
+    <section class="container">
+        <h1 class="large">
+            <i class="fas fa-user-shield"></i> Security And Privacy
+        </h1>
+        <form class="form userPassForm">
+            <div class="form-group">
+                <label><i class="fas fa-key"></i> New Password</label><br>
+                <input type="password" placeholder="Password" id="password" value="" name="password" />
+            </div>
+            <button type="submit" class="btn btn-dark my-1">Update</button>
+            <a class="btn btn-light my-2" href="/dashboard">Go Back</a>
+      </form>
+    </section>
 
-    <div class="container">
-        <button class="task-button">
-            <span class="button__text hide-sm">Add task</span>
-            <span class="button__icon">
-                <ion-icon name="add-circle-outline"></ion-icon>
-            </span>
-        </button>
-
-
-        <div class="data_content">
-            <h3 id="message-1"></h3>
-        </div>
-
-
-        <div class="prevnext">
-            <button id="prev-btn" type="click">
-                <span class="button__icon">
-                    <ion-icon name="arrow-back-circle-outline"></ion-icon>
-                </span>
-                <span class="button__text">Prev</span>
-            </button>
-            <button id="next-btn" type="click">
-                <span class="button__text">Next</span>
-                <span class="button__icon">
-                    <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-                </span>
-            </button>
-        </div>
-    </div>
+    <section class="container">
+        <form class="form userDeleteAction">
+            <div class="form-group">
+                <label><i class="fas fa-exclamation-triangle"></i> This action cannot be undone</label><br>
+                <button type="submit" class="btn btn-danger deleteBtn">Delete My Account</button>
+            </div>
+      </form>
+    </section>
 
     {{>footer}}
 
-
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="/js/dashboard.js"></script>
+    <script src="/js/profile.js"></script>
 </body>
 
 </html>

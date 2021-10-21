@@ -50,6 +50,22 @@ router.get('/dashboard', async (req, res)=>{
     }
 })
 
+router.get('/profile', async (req, res)=>{
+    const token = req.header('Cookie')
+    if(token) {
+        const modToken = token.replace("token=","")
+        const decoded = jwt.verify(modToken, process.env.JWT_SECRET)
+        const user = await User.findOne({_id: decoded._id, 'tokens.token': modToken})
+        if(user) {
+            res.render('profile')
+        } else {
+            res.redirect("/")
+        }
+    } else {
+        res.redirect("/")
+    }  
+})
+
 router.post('/users/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)

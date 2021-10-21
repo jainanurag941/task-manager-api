@@ -18,6 +18,14 @@ body {
   text-align: right;
   margin-right: 20px;
 }
+.dropdown-menu {
+  background-image: linear-gradient(-90deg, #04204e, #d38312);
+}
+.dropdown-item {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+}
 .menu-bar .navbar-toggler {
   padding-right: 20px;
   outline: none !important;
@@ -40,6 +48,9 @@ body {
   .nav-link:hover {
     border-bottom: none !important;
     font-weight: bold;
+  }
+  .dropdown-menu {
+    text-align: right;
   }
 }
 
