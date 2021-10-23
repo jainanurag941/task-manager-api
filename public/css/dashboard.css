@@ -365,4 +365,7 @@ footer a:hover {
   #newTask {
     margin-left: 2.5vw;
   }
+  h1 {
+    font-size: 2rem;
+  }
 }
