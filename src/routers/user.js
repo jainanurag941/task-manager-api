@@ -21,17 +21,54 @@ router.post('/users', async (req, res) => {
     }
 });
 
-router.get('/', (req, res)=>{
-    res.clearCookie('token')
-    res.render('index')
+router.get('/', async (req, res)=>{
+    const token = req.header('Cookie')
+    if(token) {
+        const modToken = token.replace("token=","")
+        const decoded = jwt.verify(modToken, process.env.JWT_SECRET)
+        const user = await User.findOne({_id: decoded._id, 'tokens.token': modToken})
+        if(user) {
+            res.redirect('/dashboard')
+        } else {
+            res.clearCookie('token')
+            res.render('index')
+        }
+    } else {
+        res.clearCookie('token')
+        res.render('index')
+    }
 })
 
-router.get('/login', (req, res)=>{
-    res.render('login')
+router.get('/login', async (req, res)=>{
+    const token = req.header('Cookie')
+    if(token) {
+        const modToken = token.replace("token=","")
+        const decoded = jwt.verify(modToken, process.env.JWT_SECRET)
+        const user = await User.findOne({_id: decoded._id, 'tokens.token': modToken})
+        if(user) {
+            res.redirect('/dashboard')
+        } else {
+            res.render('login')
+        }
+    } else {
+        res.render('login')
+    }
 })
 
-router.get('/register', (req, res)=>{
-    res.render('register')
+router.get('/register', async (req, res)=>{
+    const token = req.header('Cookie')
+    if(token) {
+        const modToken = token.replace("token=","")
+        const decoded = jwt.verify(modToken, process.env.JWT_SECRET)
+        const user = await User.findOne({_id: decoded._id, 'tokens.token': modToken})
+        if(user) {
+            res.redirect('/dashboard')
+        } else {
+            res.render('register')
+        }
+    } else {
+        res.render('register')
+    }
 })
 
 router.get('/dashboard', async (req, res)=>{
