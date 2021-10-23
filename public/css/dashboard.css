@@ -190,7 +190,7 @@ h3 {
   z-index: +1;
   border-radius: 30px;
   color: white;
-  display: none;
+  /* display: none; */
   margin-left: 37vw;
   margin-top: 18vh;
   height: 260px;
@@ -202,20 +202,15 @@ label {
 }
 
 .close {
-  background: none;
-  border: none;
   color: #23049d;
   margin-top: 10px;
   margin-left: 340px;
   font-size: 2rem;
+  padding-right: 20px;
 }
 .close:hover {
   cursor: pointer;
   color: red;
-}
-
-.cancelButton {
-  padding-right: 20px;
 }
 .addInfo {
   font-family: "Merriweather", serif;
