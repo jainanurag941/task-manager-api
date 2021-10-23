@@ -77,10 +77,3 @@ footer a:hover {
 .email {
   color: black;
 }
-
-/* Mobile Styles */
-@media (max-width: 850px) {
-  .textSize {
-    font-size: 2rem;
-  }
-}
