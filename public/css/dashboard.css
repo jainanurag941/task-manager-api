@@ -190,7 +190,7 @@ h3 {
   z-index: +1;
   border-radius: 30px;
   color: white;
-  /* display: none; */
+  display: none;
   margin-left: 37vw;
   margin-top: 18vh;
   height: 260px;
